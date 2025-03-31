@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* Reset básico para remover margens e preencher a tela corretamente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilização dos botões */
+.opcoes button {
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff1168;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.opcoes button:hover {
+    background-color: #9e1e4c;
+    transform: scale(1.05);
+}
+
+.opcoes button:active {
+    background-color: #25020f;
+    transform: scale(0.98);
+}
+
+/* Resultado destacado */
+#resultado {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}

@@ -49,3 +49,57 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: inline-block;
 }
+
+/* Estilização do placar */
+#placar {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Botão de reset */
+button[onclick="resetarJogo()"] {
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[onclick="resetarJogo()"]:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+button[onclick="resetarJogo()"]:active {
+    background-color: #000;
+    transform: scale(0.98);
+}
+
+/* Histórico de partidas */
+#historico {
+    list-style: none;
+    margin-top: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#historico li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+
+#historico li:last-child {
+    border-bottom: none;
+}

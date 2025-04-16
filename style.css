@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* Reset básico para remover margens e preencher a tela corretamente */
 * {
     margin: 0;
     padding: 0;
@@ -8,94 +7,155 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 50px;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #fce3ec, #ffe9d6);
     color: #333;
+    transition: background 0.5s ease;
 }
 
-/* Estilização dos botões */
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff1168, #ff6f91);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(255, 17, 104, 0.2);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+h1:hover {
+    transform: scale(1.03);
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff1168;
+    margin: 8px auto 0;
+    border-radius: 2px;
+    animation: pulseBar 2s infinite ease-in-out;
+}
+
+/* Animação suave na barrinha decorativa do h2 */
+@keyframes pulseBar {
+    0%, 100% {
+        transform: scaleX(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scaleX(1.4);
+        opacity: 1;
+    }
+}
+
+
+/* Botões estilizados com sombra e hover animado */
 .opcoes button {
     font-size: 20px;
-    padding: 12px 20px;
+    padding: 14px 24px;
     margin: 10px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
-    background-color: #ff1168;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff1168, #ff6f91);
     color: white;
-    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 6px 15px rgba(255, 17, 104, 0.3);
+    transition: all 0.3s ease-in-out;
 }
 
 .opcoes button:hover {
-    background-color: #9e1e4c;
-    transform: scale(1.05);
+    transform: scale(1.07);
+    box-shadow: 0 8px 18px rgba(255, 17, 104, 0.4);
 }
 
 .opcoes button:active {
-    background-color: #25020f;
-    transform: scale(0.98);
+    transform: scale(0.96);
+    background: #25020f;
 }
 
-/* Resultado destacado */
+/* Resultado com estilo de card clean */
 #resultado {
-    font-size: 24px;
-    margin-top: 20px;
-    font-weight: bold;
-    padding: 15px;
-    border-radius: 5px;
+    font-size: 26px;
+    margin-top: 30px;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 12px;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     display: inline-block;
+    transition: transform 0.3s ease;
 }
 
-/* Estilização do placar */
+#resultado:hover {
+    transform: translateY(-3px);
+}
+
+/* Placar com cor mais suave */
 #placar {
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    margin-top: 25px;
+    font-weight: 600;
     color: #444;
 }
 
-/* Botão de reset */
+/* Botão de reset com design elegante */
 button[onclick="resetarJogo()"] {
-    margin-top: 20px;
-    background-color: #333;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #333, #555);
     color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 12px 26px;
+    font-size: 18px;
+    border-radius: 10px;
     border: none;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 button[onclick="resetarJogo()"]:hover {
-    background-color: #555;
     transform: scale(1.05);
+    background: #444;
 }
 
 button[onclick="resetarJogo()"]:active {
-    background-color: #000;
-    transform: scale(0.98);
+    transform: scale(0.95);
+    background: #000;
 }
 
-/* Histórico de partidas */
+/* Histórico com visual de card e fonte clean */
 #historico {
     list-style: none;
-    margin-top: 30px;
-    max-width: 500px;
+    margin-top: 35px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+#historico:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 #historico li {
-    padding: 8px 12px;
+    padding: 10px 14px;
     border-bottom: 1px solid #eee;
     font-size: 16px;
 }
@@ -103,3 +163,4 @@ button[onclick="resetarJogo()"]:active {
 #historico li:last-child {
     border-bottom: none;
 }
+

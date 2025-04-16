@@ -4,8 +4,13 @@ let historico = [];
 
 function jogar(escolhaUsuario) {
     const opcoes = ['pedra', 'papel', 'tesoura'];
-    const escolhaComputador = opcoes[Math.floor(Math.random() * 3)];
+    const escolhaComputador = opcoes[Math.floor(Math.random() * opcoes.length)];
     let resultado = '';
+
+    if (!opcoes.includes(escolhaUsuario)) {
+        console.error('Escolha inválida:', escolhaUsuario);
+        return;
+    }
 
     if (escolhaUsuario === escolhaComputador) {
         resultado = 'Empate!';
@@ -24,16 +29,24 @@ function jogar(escolhaUsuario) {
     // Atualizar o histórico
     historico.push(`Você: ${escolhaUsuario} | PC: ${escolhaComputador} → ${resultado}`);
 
-    // Atualizar os elementos na tela
-    document.getElementById('resultado').innerText =
-        `Você escolheu ${escolhaUsuario}. O computador escolheu ${escolhaComputador}. ${resultado}`;
+    // Atualizar os elementos na tela (com verificação de existência)
+    const resultadoElem = document.getElementById('resultado');
+    const placarElem = document.getElementById('placar');
+    const historicoElem = document.getElementById('historico');
 
-    document.getElementById('placar').innerText =
-        `Placar - Você: ${pontuacaoUsuario} | Computador: ${pontuacaoComputador}`;
-
-    document.getElementById('historico').innerHTML = historico
-        .map((item, index) => `<li>Rodada ${index + 1}: ${item}</li>`)
-        .join('');
+    if (resultadoElem && placarElem && historicoElem) {
+        resultadoElem.innerText = 
+            `Você escolheu ${escolhaUsuario}. O computador escolheu ${escolhaComputador}. ${resultado}`;
+        
+        placarElem.innerText = 
+            `Placar - Você: ${pontuacaoUsuario} | Computador: ${pontuacaoComputador}`;
+        
+        historicoElem.innerHTML = historico
+            .map((item, index) => `<li>Rodada ${index + 1}: ${item}</li>`)
+            .join('');
+    } else {
+        console.warn('Algum elemento HTML não foi encontrado.');
+    }
 }
 
 function resetarJogo() {
@@ -41,8 +54,13 @@ function resetarJogo() {
     pontuacaoComputador = 0;
     historico = [];
 
-    document.getElementById('resultado').innerText = '';
-    document.getElementById('placar').innerText = 'Placar - Você: 0 | Computador: 0';
-    document.getElementById('historico').innerHTML = '';
+    const resultadoElem = document.getElementById('resultado');
+    const placarElem = document.getElementById('placar');
+    const historicoElem = document.getElementById('historico');
+
+    if (resultadoElem) resultadoElem.innerText = '';
+    if (placarElem) placarElem.innerText = 'Placar - Você: 0 | Computador: 0';
+    if (historicoElem) historicoElem.innerHTML = '';
 }
+
 

@@ -18,12 +18,19 @@
     <h1>Pedra, Papel e Tesoura</h1>
 
     <div class="opcoes">
-        <button onclick="jogar('pedra')">Pedra</button>
-        <button onclick="jogar('papel')">Papel</button>
-        <button onclick="jogar('tesoura')">Tesoura</button>
+        <button onclick="jogar('pedra')">✊ Pedra</button>
+        <button onclick="jogar('papel')">✋ Papel</button>
+        <button onclick="jogar('tesoura')">✌️ Tesoura</button>
     </div>
 
     <p id="resultado"></p>
+
+    <p id="placar">Placar - Você: 0 | Computador: 0</p>
+
+    <button onclick="resetarJogo()">🔁 Resetar Jogo</button>
+
+    <h2>Histórico de Partidas</h2>
+    <ul id="historico"></ul>
 
     <script src="js.js"></script>
 

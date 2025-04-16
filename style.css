@@ -112,28 +112,53 @@ h2::after {
     color: #444;
 }
 
-/* Botão de reset com design elegante */
-button[onclick="resetarJogo()"] {
-    margin-top: 25px;
-    background: linear-gradient(135deg, #333, #555);
+/* Botão de Reset estilizado */
+/* Botão de Reset com ícone reposicionado */
+#btn-reset {
+    background: linear-gradient(135deg, #f05a84, #ff95b2);
     color: #fff;
-    padding: 12px 26px;
+    padding: 14px 28px 14px 48px; /* espaço extra à esquerda pro ícone */
     font-size: 18px;
-    border-radius: 10px;
+    font-weight: 600;
     border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-button[onclick="resetarJogo()"]:hover {
-    transform: scale(1.05);
-    background: #444;
+#btn-reset::before {
+    content: "⟳";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+    pointer-events: none;
 }
 
-button[onclick="resetarJogo()"]:active {
-    transform: scale(0.95);
+#btn-reset:hover {
+    background: linear-gradient(135deg, #fa6cc1, #feb9f0);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+#btn-reset:active {
+    transform: scale(0.96);
     background: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
+
+
 
 /* Histórico com visual de card e fonte clean */
 #historico {

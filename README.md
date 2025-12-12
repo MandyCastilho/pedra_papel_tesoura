@@ -1,7 +1,7 @@
 # 🎮 Pedra, Papel e Tesoura — Versão Estilizada em JavaScript 💖
 
 <p align="center">
-  Um projeto moderno e visualmente <b>estiloso></b> do clássico jogo desenvolvido com **HTML**, **CSS** e **JavaScript**.
+  Um projeto moderno e visualmente <b>estiloso</b> do clássico jogo desenvolvido com <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>. 
 </p>
 
 Além do básico “jogar contra o computador”, o game conta com placar dinâmico, histórico completo das rodadas, visual com gradientes, botões animados e um toque de **UI moderna** que deixa tudo bem mais gostoso de usar.
